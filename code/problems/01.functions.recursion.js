@@ -8,7 +8,9 @@
 (function (/* 01. factorial (n) */) {
     
     var factA = function (n) {
-
+        return n === 0 ?
+            1 :
+            n * factA(n-1);
     };
     var factB = function (n) {
         var r = 1;
@@ -22,7 +24,7 @@
         factB (5)  // 120
     );
     
-})();
+});
 
 
 // 02. Diseña una función recursiva para calcular el 
@@ -33,6 +35,10 @@
 (function (/* 02. fibonacci (n) */) {
     
     var fibA = function (n) {
+        // 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+        return n === 1 || n === 2?
+            1 :
+            fibA(n-1) + fibA(n-2);
 
     };
     var fibB = function (n) {
@@ -50,7 +56,7 @@
         fibB (10)  // 55
     );
     
-})();
+});
 
 
 // 03. Diseña una función recursiva para calcular el 
@@ -61,15 +67,22 @@
 (function (/* 03. pow (b, e) */) {
     
     var pow = function (b, e) {
+        return e === 0 ?
+            1 :
+            b === 0?
+            0 :
+            b * pow(b, e - 1);
 
     };
     
     console.log (
         pow (2, 6), // 64
-        pow (3, 6)  // 729
+        pow (3, 6),  // 729
+        pow (0, 34), // 0
+        pow (456, 0) // 1
     );
     
-})();
+});
 
 
 // 04. Diseña dos predicados lógicos [even] y [odd] que
@@ -80,10 +93,14 @@
 (function (/* 04. even (n) & odd (n) */) {
     
     var even = function (n) {
-
+        return n === 0 ?
+            true :
+            !even(n-1);
     };
     var odd = function (n) {
-
+        return n === 0 ?
+            false :
+            !odd(n-1);
     };
     
     console.log (
@@ -91,7 +108,7 @@
         odd  (5), odd  (6)  // true false
     );
     
-})();
+});
 
 
 // 05. Diseña una función recursiva [addUp] que devuelva 
@@ -101,14 +118,16 @@
 (function (/* 05. addUp (n) */) {
     
     var addUp = function (n) {
-
+        return n === 1 ?
+            1:
+            n + addUp(n - 1);
     };
     
     console.log (
-        addUp (5) // 15
+        addUp (5) // 15 = 1 + 2 + 3 + 4 + 5
     );
     
-})();
+});
 
 
 // 06. Diseña una función recursiva [digits] que sume los dígitos
@@ -118,7 +137,9 @@
 (function (/* 06. digits (n) */) {
     
     var digits = function (n) {
-
+        return n < 10 ?
+            n :
+            n % 10 + digits(Math.floor(n/10));
     };
     
     console.log (
