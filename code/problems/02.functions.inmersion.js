@@ -48,7 +48,7 @@
         addVB ([1,2,3,4,5])  // 15
     );
     
-})();
+});
 
 
 // 03. Diseña una función recursiva [hasV] para determinar  
@@ -67,7 +67,7 @@
         hasV ([1,2,3,4,5], 6)  // false
     );
     
-})();
+});
 
 
 // 04. Diseña una función recursiva [repeatV] para 
@@ -86,7 +86,7 @@
         repeatV ([1,2,3,4,5,3])  // true
     );
     
-})();
+});
 
 
 // 05. Diseña una función recursiva [mirrorV] que determine si
@@ -108,7 +108,7 @@
         mirrorV ([2, 4, 6], [6, 4, 2, 7])   // false
     );
     
-})();
+});
 
 
 // 06. Diseña una función recursiva [sortV] que ordene un vector v.
@@ -135,7 +135,7 @@
         sortV ([6, 5, 4, 3, 2, 1])  // [ 1, 2, 3, 4, 5, 6 ]
     );
     
-})();
+});
 
 
 // Bonus 01. Diseña una función recursiva [containsV] que determine
@@ -170,7 +170,7 @@
         containsV ([1,2,3,4], [3,4]),
         containsV ([1,2,3,4], [1,3])
     ); // T F F T F T T T F T F F T T T T T F
-})();
+});
 
 
 // Bonus 02. Diseña una función recursiva [parts] que calcule las partes de
@@ -192,4 +192,4 @@
         parts ([1, 2, 3]) // [ [], [ 1 ], [ 2 ], [ 1, 2 ], [ 3 ], [ 1, 3 ], [ 2, 3 ], [ 1, 2, 3 ] ]
     );
     
-})();
+});
