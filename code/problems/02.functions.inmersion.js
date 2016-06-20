@@ -7,6 +7,8 @@
 // indica si un número es simétrico respecto a sí mismo.
 
 (function (/* 01. mirror (n, m) */) {
+
+    // Mi versión: concatenando los números en forma de cadena de caracteres y devolviendo la conversión de la cadena a número
     var reverse = function (n) {
         return n < 10 ?
             n :
@@ -14,12 +16,10 @@
     }
 
     var mirror = function (n, m) {
-        return n === reverse(m) ?
-            true :
-            false;
+        return n === reverse(m);
     };
     var palindrome = function (n) {
-
+        return n === reverse(n);
     };
     
     console.log (
@@ -33,7 +33,7 @@
         palindrome (1221)       // true
     ); 
     
-})();
+});
 
 
 // 02. Diseña una función recursiva [addV] que dado un
@@ -42,11 +42,22 @@
 
 (function (/* 02. addV (v) */) {
     
+    // Mi versión (Samuel): Emula la funcionalidad que suelen tener los lenguajes funcionales por la que existe una referencia al primer elemento de una lista y al resto (Haskel)
     var addVA = function (v) {
-
+        return v.length === 0 ?
+            0 :
+            v[0] + addVA(v.slice(1));
     };
-    var addVB = function (v) {
 
+    // Versión del curso (usando una función auxiliar)
+    var addVB = function (v) {
+        return addVBFrom(v, 0);
+    };
+
+    var addVBFrom = function (n, m) {
+        return m > n.length - 1 ?
+            0 :
+            addVBFrom(n, m + 1) + n[m];
     };
     
     console.log (
@@ -73,7 +84,7 @@
         hasV ([1,2,3,4,5], 6)  // false
     );
     
-});
+})();
 
 
 // 04. Diseña una función recursiva [repeatV] para 
