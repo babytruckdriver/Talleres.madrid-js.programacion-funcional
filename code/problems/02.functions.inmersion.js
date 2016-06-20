@@ -7,10 +7,16 @@
 // indica si un número es simétrico respecto a sí mismo.
 
 (function (/* 01. mirror (n, m) */) {
-    
+    var reverse = function (n) {
+        return n < 10 ?
+            n :
+            Number.parseInt(n % 10 + "" + reverse(Math.floor(n/10)));
+    }
 
     var mirror = function (n, m) {
-
+        return n === reverse(m) ?
+            true :
+            false;
     };
     var palindrome = function (n) {
 
