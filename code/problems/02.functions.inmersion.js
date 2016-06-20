@@ -76,15 +76,21 @@
 (function (/* 03. hasV (v, e) */) {
     
     var hasV = function (v, e) {
-
+        return hasVFrom(v, e, 0);
     };
+
+    var hasVFrom = function (v, e, i) {
+        return i > v.length - 1 ?
+            false :
+            v[i] === e || hasVFrom(v, e, i + 1);
+    }
   
     console.log (
         hasV ([1,2,3,4,5], 4), // true
         hasV ([1,2,3,4,5], 6)  // false
     );
     
-})();
+});
 
 
 // 04. Diseña una función recursiva [repeatV] para 
@@ -103,7 +109,7 @@
         repeatV ([1,2,3,4,5,3])  // true
     );
     
-});
+})();
 
 
 // 05. Diseña una función recursiva [mirrorV] que determine si
