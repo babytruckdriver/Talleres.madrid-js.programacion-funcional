@@ -19,6 +19,7 @@
             false;
     };
     var palindrome = function (n) {
+        return n === reverse(n);
 
     };
     
@@ -33,7 +34,7 @@
         palindrome (1221)       // true
     ); 
     
-})();
+});
 
 
 // 02. Diseña una función recursiva [addV] que dado un
@@ -54,7 +55,7 @@
         addVB ([1,2,3,4,5])  // 15
     );
     
-});
+})();
 
 
 // 03. Diseña una función recursiva [hasV] para determinar  
