@@ -101,9 +101,21 @@
 (function (/* 04. repeatV (v) */) {
     
     var repeatV = function (v) {
-
+        return repeatVFrom(v, 0);
     };
     
+    var repeatVFrom = function (v, i) {
+        return i === v.length - 1 ?
+            false :
+            hasVFrom(v, v[i], i + 1) || repeatVFrom(v, i + 1);
+    };
+
+    var hasVFrom = function (v, e, i) {
+        return i > v.length - 1 ?
+            false :
+            v[i] === e || hasVFrom(v, e, i + 1);
+    }
+
     console.log (
         repeatV ([1,2,3,4,5]),   // false
         repeatV ([1,2,3,4,5,3])  // true
