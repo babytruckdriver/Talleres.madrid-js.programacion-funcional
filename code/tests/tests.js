@@ -69,6 +69,9 @@ describe("06. Ordenar array: Función sortV", function () {
             var actual = sortV(t.input);
             expect(actual).to.equal(t.expected);
         });
+
+        // Note: usar '.equal' para comparar números, cadenas y booleanos, y '.eql' para comparar objetos y arrays.
+        // '.eql' compara cada valor contenido en un array/objeto, no el array/objeto al completo (que óbviamente son distintos)
     });
 
     // Pendiente de implementar
