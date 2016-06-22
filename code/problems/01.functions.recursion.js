@@ -5,7 +5,7 @@
 // n! se computa como el producto de todos los números
 // naturales desde 1 hasta n.
 
-(function (/* 01. factorial (n) */) {
+//(function (/* 01. factorial (n) */) {
     
     var factA = function (n) {
         return n === 0 ?
@@ -19,12 +19,12 @@
         return r;
     };
     
-    console.log (
+    /*console.log (
         factA (5), // 120
         factB (5)  // 120
-    );
+    );*/
     
-});
+//});
 
 
 // 02. Diseña una función recursiva para calcular el 
@@ -148,4 +148,4 @@
         digits (125) // 8
     );
     
-})();
+});

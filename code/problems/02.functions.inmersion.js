@@ -129,7 +129,7 @@
 // Por ejemplo, [1,2,3] es simétrico a [3,2,1]. No pueden utilizarse
 // funciones auxiliares disponibles dentro del prototipo Array.
 
-(function (/* 05. mirrorV (v, w) */) {
+//(function (/* 05. mirrorV (v, w) */) {
     
     var mirrorV = function (v, w) {
         return v.length != w.length ?
@@ -141,17 +141,17 @@
         return i === v.length - 1 ?
             v[i] === w[j] :
             v[i] === w[j] && mirrorVFrom(v, w, i + 1, j - 1);
-    }
+    };
 
-    console.log (
+    /*console.log (
         mirrorV ([2, 4, 6], []),            // false
         mirrorV ([2, 4, 6], [2, 4, 6]),     // false
         mirrorV ([2, 4, 6], [6, 4]),        // false
         mirrorV ([2, 4, 6], [6, 4, 2]),     // true
         mirrorV ([2, 4, 6], [6, 4, 2, 7])   // false
-    );
+    );*/
     
-});
+//});
 
 
 // 06. Diseña una función recursiva [sortV] que ordene un vector v.
@@ -161,7 +161,7 @@
 // [insertV]. Después, utilizando esa función, resuelve la función
 // de ordenación.
 
-(function (/* 06. sortV (v) */) {
+//(function (/* 06. sortV (v) */) {
     
     var insertV = function (v, e) {
 
@@ -171,14 +171,14 @@
 
     };
     
-    console.log (
+    /*console.log (
         sortV ([1, 3, 2, 4, 8, 1]), // [ 1, 1, 2, 3, 4, 8 ]
         sortV ([2, 4, 6, 8, 3, 0]), // [ 0, 2, 3, 4, 6, 8 ]
         sortV ([1, 2, 3, 4, 5, 6]), // [ 1, 2, 3, 4, 5, 6 ] 
         sortV ([6, 5, 4, 3, 2, 1])  // [ 1, 2, 3, 4, 5, 6 ]
-    );
+    );*/
     
-})();
+//});
 
 
 // Bonus 01. Diseña una función recursiva [containsV] que determine
