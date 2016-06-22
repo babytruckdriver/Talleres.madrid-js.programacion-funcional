@@ -121,7 +121,7 @@
         repeatV ([1,2,3,4,5,3])  // true
     );
     
-})();
+});
 
 
 // 05. Diseña una función recursiva [mirrorV] que determine si
@@ -132,9 +132,17 @@
 (function (/* 05. mirrorV (v, w) */) {
     
     var mirrorV = function (v, w) {
-
+        return v.length != w.length ?
+            false :
+            mirrorVFrom(v, w, 0, v.length - 1);
     };
     
+    var mirrorVFrom = function (v, w, i, j) {
+        return i === v.length - 1 ?
+            v[i] === w[j] :
+            v[i] === w[j] && mirrorVFrom(v, w, i + 1, j - 1);
+    }
+
     console.log (
         mirrorV ([2, 4, 6], []),            // false
         mirrorV ([2, 4, 6], [2, 4, 6]),     // false
@@ -170,7 +178,7 @@
         sortV ([6, 5, 4, 3, 2, 1])  // [ 1, 2, 3, 4, 5, 6 ]
     );
     
-});
+})();
 
 
 // Bonus 01. Diseña una función recursiva [containsV] que determine
