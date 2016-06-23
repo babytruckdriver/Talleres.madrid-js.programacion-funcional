@@ -46,10 +46,19 @@ describe("06. Ordenar array: Función sortV", function () {
     "use strict";
 
     it("should insertar un elemento en un array ordenado", function () {
-        var arrayOrdenado = [1, 2, 3, 5];
-        var e = 4;
-        var arrayFinal = insertV(arrayOrdenado, e);
-        expect(arrayFinal).to.eql([1, 2, 3, 4, 5]);
+
+        var testCases = [
+            {
+                inputArray: [1, 2, 3, 5],
+                e: 4,
+                expected: [1, 2, 3, 4, 5]
+            }
+        ];
+
+        testCases.forEach(function(t) {
+            var actual = insertV(t.inputArray, t.e);
+            expect(actual).to.eql(t.expected);
+        });
     });
 
     it("should tomar un array y ordenarlo", function () {

@@ -164,7 +164,17 @@
 //(function (/* 06. sortV (v) */) {
     
     var insertV = function (v, e) {
+        return v.length === 0 ?
+            [e] :
+            insertVAux(v, e, 0, []);
+    };
 
+    var insertVAux = function (v, e, i, ac) {
+        return i === v.length ?
+            ac :
+            v[i] <= e ?
+                insertVAux(v, e, i + 1, ac.concat([v[i]])) :
+                insertVAux(v, e, i + 1, ac.concat([e].concat([v[i]])));
     };
 
     var sortV = function (v) {
