@@ -1,5 +1,5 @@
 /*jslint indent:4, devel:true, browser:true, vars: true*/
-/*global chai, describe, it, factA, mirrorV, sortV*/
+/*global chai, describe, it, factA, mirrorV, insertV, sortV*/
 
 var assert = chai.assert;
 var expect = chai.expect;
@@ -44,6 +44,13 @@ describe("05. Vectores simétricos", function () {
 
 describe("06. Ordenar array: Función sortV", function () {
     "use strict";
+
+    it("should insertar un elemento en un array ordenado", function () {
+        var arrayOrdenado = [1, 2, 3, 5];
+        var e = 4;
+        var arrayFinal = insertV(arrayOrdenado, e);
+        expect(arrayFinal).to.eql([1, 2, 3, 4, 5]);
+    });
 
     it("should tomar un array y ordenarlo", function () {
         var testCases = [

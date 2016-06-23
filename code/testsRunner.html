@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="./tests/mocha.css">
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <script src="./tests/mocha.js"></script>
+    <script src="./tests/chai.js"></script>
+    <script>
+        mocha.setup('bdd');
+    </script>
+
+    <script src="./problems/01.functions.recursion.js"></script>
+    <script src="./problems/02.functions.inmersion.js"></script>
+    <script src="./tests/tests.js"></script>
+
+    <script>
+        mocha.run();
+    </script>
+</body>
+
+</html>
